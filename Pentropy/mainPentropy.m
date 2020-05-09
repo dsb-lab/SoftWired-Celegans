@@ -30,8 +30,8 @@ for i = 1:length(inhibition)
 
     parfor j = 1:num_trials
 
-        W_trial = random_inhibition(W,inhi); %inhibit optimal network
-        rows_inhi_W = check_inhibition(W_trial);
+        W_trial = randomInhibition(W,inhi); %inhibit optimal network
+        rows_inhi_W = checkInhibition(W_trial);
         X = simulation(time,W_trial); %simulate dynamics
         for k = 1:N
             y = X(k,time/4:time);
