@@ -1,0 +1,397 @@
+Id, label, posx, posy, nodetype, function
+ASIL,,8.806501,2.750828,Reservoir,Sensory Neurons
+ASIR,,4.611730,1.293260,Reservoir,Sensory Neurons
+ASJL,,8.478148,-1.961532,Reservoir,Sensory Neurons
+ASJR,,7.349612,0.513937,Reservoir,Sensory Neurons
+AWAL,,13.367595,4.154156,Reservoir,Sensory Neurons
+AWAR,,5.975170,4.552385,Reservoir,Sensory Neurons
+ASGL,,9.088106,-0.094582,Reservoir,Sensory Neurons
+ASGR,,9.072114,-0.307449,Reservoir,Sensory Neurons
+AWBL,,7.813783,2.234546,Reservoir,Sensory Neurons
+AWBR,,10.113552,2.125789,Reservoir,Sensory Neurons
+ASEL,,9.007246,-1.811230,Reservoir,Sensory Neurons
+ASER,,9.075858,2.445353,Reservoir,Sensory Neurons
+ADFL,,8.733341,1.552040,Reservoir,Sensory Neurons
+ADFR,,9.090328,-0.455161,Reservoir,Sensory Neurons
+AFDL,AFDL,8.440807,-1.180924,Reservoir,Sensory Neurons
+AFDR,AFDR,9.332593,-1.720605,Reservoir,Sensory Neurons
+AWCL,,6.396694,-1.214248,Reservoir,Sensory Neurons
+AWCR,,3.583574,2.157570,Reservoir,Sensory Neurons
+ASKL,,8.487786,-1.132392,Reservoir,Sensory Neurons
+ASKR,,10.055448,-2.567275,Reservoir,Sensory Neurons
+ASHL,,7.846636,-0.362171,Reservoir,Sensory Neurons
+ASHR,,8.478810,0.469288,Reservoir,Sensory Neurons
+ADLL,,6.702680,-0.045077,Reservoir,Sensory Neurons
+ADLR,,7.752681,0.941561,Reservoir,Sensory Neurons
+BAGL,,9.639899,1.663910,Reservoir,Sensory Neurons
+BAGR,,6.704521,0.116039,Reservoir,Sensory Neurons
+URXL,,6.178824,-1.670251,Reservoir,Sensory Neurons
+URXR,,7.989726,2.298945,Reservoir,Sensory Neurons
+ALNL,,6.845501,0.557068,Reservoir,Sensory Neurons
+ALNR,,7.661623,1.676034,Reservoir,Sensory Neurons
+PLNL,,6.366404,0.048836,Reservoir,Sensory Neurons
+PLNR,,8.828791,1.650915,Reservoir,Sensory Neurons
+SDQL,,10.316318,0.128897,Reservoir,Sensory Neurons
+SDQR,,5.762615,-1.113453,Reservoir,Sensory Neurons
+AQR,,6.407627,3.525686,Reservoir,Sensory Neurons
+PQR,,7.076597,1.122115,Reservoir,Sensory Neurons
+ALML,,7.711372,1.332916,Reservoir,Sensory Neurons
+ALMR,,6.852726,-2.103403,Reservoir,Sensory Neurons
+AVM,,5.866436,0.732291,Reservoir,Sensory Neurons
+PVM,,7.733937,-0.294080,Reservoir,Sensory Neurons
+PLML,,0.000000,-0.500000,Input,Sensory Neurons
+PLMR,,0.000000,0.500000,Input,Sensory Neurons
+FLPL,,10.128965,0.437377,Reservoir,Sensory Neurons
+FLPR,,8.296717,2.381549,Reservoir,Sensory Neurons
+DVA,,6.793301,1.044937,Reservoir,Sensory Neurons
+PVDL,,9.252632,-0.365573,Reservoir,Sensory Neurons
+PVDR,,8.323505,-1.748766,Reservoir,Sensory Neurons
+ADEL,,6.278071,0.157312,Reservoir,Sensory Neurons
+ADER,,9.083381,3.878237,Reservoir,Sensory Neurons
+PDEL,,6.999664,0.280997,Reservoir,Sensory Neurons
+PDER,,7.876258,-2.899534,Reservoir,Sensory Neurons
+PHAL,,7.341551,-2.692018,Reservoir,Sensory Neurons
+PHAR,,9.260563,-1.332048,Reservoir,Sensory Neurons
+PHBL,,8.150139,-0.816793,Reservoir,Sensory Neurons
+PHBR,,8.455281,-0.900490,Reservoir,Sensory Neurons
+PHCL,,8.734948,1.109045,Reservoir,Sensory Neurons
+PHCR,,10.567832,-0.291185,Reservoir,Sensory Neurons
+IL2DL,,4.792467,-1.259383,Reservoir,Sensory Neurons
+IL2DR,,10.031891,-1.608233,Reservoir,Sensory Neurons
+IL2L,,9.441431,0.186075,Reservoir,Sensory Neurons
+IL2R,,10.155045,-2.941350,Reservoir,Sensory Neurons
+IL2VL,,7.703453,-1.811768,Reservoir,Sensory Neurons
+IL2VR,,12.362012,1.237828,Reservoir,Sensory Neurons
+CEPDL,,10.068458,-1.587270,Reservoir,Sensory Neurons
+CEPDR,,7.297077,-0.408704,Reservoir,Sensory Neurons
+CEPVL,,9.647637,-0.416808,Reservoir,Sensory Neurons
+CEPVR,,9.052312,-3.077724,Reservoir,Sensory Neurons
+URYDL,,7.469225,-1.235380,Reservoir,Sensory Neurons
+URYDR,,5.634414,0.761962,Reservoir,Sensory Neurons
+URYVL,,8.422976,0.050220,Reservoir,Sensory Neurons
+URYVR,,5.999483,1.691238,Reservoir,Sensory Neurons
+OLLL,,8.525269,-0.448599,Reservoir,Sensory Neurons
+OLLR,,8.034335,-0.392993,Reservoir,Sensory Neurons
+OLQDL,,5.374681,-0.428476,Reservoir,Sensory Neurons
+OLQDR,,6.752950,-1.468809,Reservoir,Sensory Neurons
+OLQVL,,6.265398,-0.800336,Reservoir,Sensory Neurons
+OLQVR,,4.996046,1.446344,Reservoir,Sensory Neurons
+IL1DL,,8.780090,-0.030042,Reservoir,Sensory Neurons
+IL1DR,,7.947843,-1.197245,Reservoir,Sensory Neurons
+IL1L,,9.528028,-0.199826,Reservoir,Sensory Neurons
+IL1R,,6.928205,2.027079,Reservoir,Sensory Neurons
+IL1VL,,7.662843,-0.883544,Reservoir,Sensory Neurons
+IL1VR,,7.559370,-1.271889,Reservoir,Sensory Neurons
+AINL,,6.319808,3.789000,Reservoir,Interneurons
+AINR,,10.483246,0.461303,Reservoir,Interneurons
+AIML,,6.114322,-1.298202,Reservoir,Interneurons
+AIMR,,7.735199,1.187124,Reservoir,Interneurons
+RIH,,6.001993,-3.494801,Reservoir,Interneurons
+URBL,,5.826354,0.500266,Reservoir,Interneurons
+URBR,,8.587030,0.677519,Reservoir,Interneurons
+RIR,,7.804573,0.275534,Reservoir,Interneurons
+AIYL,,7.285770,1.293032,Reservoir,Interneurons
+AIYR,,5.957458,0.682544,Reservoir,Interneurons
+AIAL,,6.726936,-0.502330,Reservoir,Interneurons
+AIAR,,8.829175,1.558636,Reservoir,Interneurons
+AUAL,,6.323542,1.890988,Reservoir,Interneurons
+AUAR,,8.990215,-0.101798,Reservoir,Interneurons
+AIZL,,7.707168,-0.326410,Reservoir,Interneurons
+AIZR,,7.545339,0.034568,Reservoir,Interneurons
+RIS,,8.076936,1.239094,Reservoir,Interneurons
+ALA,,10.290465,0.700372,Reservoir,Interneurons
+PVQL,,7.685430,0.937786,Reservoir,Interneurons
+PVQR,,8.274841,-1.544651,Reservoir,Interneurons
+ADAL,,9.423833,0.460593,Reservoir,Interneurons
+ADAR,,8.202762,0.772870,Reservoir,Interneurons
+RIFL,,8.392109,-1.412229,Reservoir,Interneurons
+RIFR,,7.756493,-0.219082,Reservoir,Interneurons
+BDUL,,7.201983,2.523155,Reservoir,Interneurons
+BDUR,,6.686406,-0.725723,Reservoir,Interneurons
+PVR,,6.931993,-1.761318,Reservoir,Interneurons
+AVFL,,7.711641,-0.411105,Reservoir,Interneurons
+AVFR,,10.295109,-0.373537,Reservoir,Interneurons
+AVHL,,6.403680,2.405186,Reservoir,Interneurons
+AVHR,,9.852019,-0.344440,Reservoir,Interneurons
+PVPL,,5.740760,-0.666942,Reservoir,Interneurons
+PVPR,,7.766088,0.414102,Reservoir,Interneurons
+LUAL,,7.608255,0.665133,Reservoir,Interneurons
+LUAR,,8.587841,-1.876018,Reservoir,Interneurons
+PVNL,,6.578059,-1.111659,Reservoir,Interneurons
+PVNR,,7.238274,-0.480863,Reservoir,Interneurons
+AVG,,8.018704,-4.543766,Reservoir,Interneurons
+DVB,,7.314478,1.863673,Reservoir,Interneurons
+RIBL,,6.399948,1.400592,Reservoir,Interneurons
+RIBR,,8.525482,-0.043509,Reservoir,Interneurons
+RIGL,,8.273678,-2.347584,Reservoir,Interneurons
+RIGR,,7.873191,2.405920,Reservoir,Interneurons
+RMGL,,8.147522,0.062060,Reservoir,Interneurons
+RMGR,,6.898746,-0.046221,Reservoir,Interneurons
+AIBL,AIBL,8.348521,0.639581,Reservoir,Interneurons
+AIBR,,7.440787,-0.354682,Reservoir,Interneurons
+RICL,,11.035536,-3.387531,Reservoir,Interneurons
+RICR,,11.344169,0.506346,Reservoir,Interneurons
+SAADL,,9.500091,-2.496247,Reservoir,Interneurons
+SAADR,,7.114948,-0.417096,Reservoir,Interneurons
+SAAVL,,8.634074,-2.505301,Reservoir,Interneurons
+SAAVR,,8.707451,-1.819271,Reservoir,Interneurons
+AVKL,,8.099285,0.978534,Reservoir,Interneurons
+AVKR,,8.490590,1.623950,Reservoir,Interneurons
+DVC,,9.509116,-0.976362,Reservoir,Interneurons
+AVJL,,8.385584,-1.416567,Reservoir,Interneurons
+AVJR,,6.017317,1.387239,Reservoir,Interneurons
+PVT,,8.000075,-0.082378,Reservoir,Interneurons
+AVDL,AVDL,9.366691,0.891876,Reservoir,Interneurons
+AVDR,AVDR,8.525302,1.875377,Reservoir,Interneurons
+AVL,,9.394684,0.359645,Reservoir,Interneurons
+PVWL,,6.964458,-0.977330,Reservoir,Interneurons
+PVWR,,9.788153,-2.417746,Reservoir,Interneurons
+RIAL,,7.963307,-2.923271,Reservoir,Interneurons
+RIAR,,9.530747,1.292574,Reservoir,Interneurons
+RIML,RIML,8.001743,-0.106256,Reservoir,Interneurons
+RIMR,,4.270574,0.871758,Reservoir,Interneurons
+AVEL,,4.711348,-3.478920,Reservoir,Interneurons
+AVER,,8.119901,-1.422721,Reservoir,Interneurons
+RMFL,,8.617236,1.015467,Reservoir,Interneurons
+RMFR,,9.286599,-1.036739,Reservoir,Interneurons
+RID,,8.674066,0.150950,Reservoir,Interneurons
+AVBL,AVBL,9.239105,0.804236,Reservoir,Interneurons
+AVBR,,9.346833,-0.197907,Reservoir,Interneurons
+AVAL,AVAL,7.779198,1.511660,Reservoir,Interneurons
+AVAR,,4.814517,-0.756880,Reservoir,Interneurons
+PVCL,,6.094108,-0.573877,Reservoir,Interneurons
+PVCR,,8.973019,1.238591,Reservoir,Interneurons
+RIPL,,6.477585,-0.706605,Reservoir,Interneurons
+RIPR,,8.205537,-0.437795,Reservoir,Interneurons
+URADL,,8.452728,0.599896,Reservoir,Motor Neurons
+URADR,,6.605058,-0.265245,Reservoir,Motor Neurons
+URAVL,,4.801858,1.718043,Reservoir,Motor Neurons
+URAVR,,7.056364,-1.805775,Reservoir,Motor Neurons
+RMEL,RMEL,7.619083,-2.142970,Reservoir,Motor Neurons
+RMER,,7.968714,-0.840997,Reservoir,Motor Neurons
+RMED,,11.266668,1.707698,Reservoir,Motor Neurons
+RMEV,,4.254670,0.661990,Reservoir,Motor Neurons
+RMDDL,,5.902793,-0.382583,Reservoir,Motor Neurons
+RMDDR,,8.246606,1.121601,Reservoir,Motor Neurons
+RMDL,,7.590430,2.364450,Reservoir,Motor Neurons
+RMDR,,7.278594,0.491268,Reservoir,Motor Neurons
+RMDVL,,8.997101,0.127783,Reservoir,Motor Neurons
+RMDVR,,9.321429,0.484820,Reservoir,Motor Neurons
+RIVL,,6.823781,-2.708060,Reservoir,Motor Neurons
+RIVR,,10.787889,-0.906795,Reservoir,Motor Neurons
+RMHL,,8.155040,0.844750,Reservoir,Motor Neurons
+RMHR,,8.170395,-1.357089,Reservoir,Motor Neurons
+SABD,,7.298428,-0.187335,Reservoir,Motor Neurons
+SABVL,,10.218438,-1.291224,Reservoir,Motor Neurons
+SABVR,,16.000000,-0.500000,Readout,Motor Neurons
+SMDDL,,9.177003,0.462935,Reservoir,Motor Neurons
+SMDDR,,7.649210,-1.585459,Reservoir,Motor Neurons
+SMDVL,,7.573789,-0.130035,Reservoir,Motor Neurons
+SMDVR,,5.795907,0.288273,Reservoir,Motor Neurons
+SMBDL,,6.766560,-0.141361,Reservoir,Motor Neurons
+SMBDR,,8.504320,-1.356981,Reservoir,Motor Neurons
+SMBVL,,7.567615,0.525094,Reservoir,Motor Neurons
+SMBVR,,5.246211,1.553964,Reservoir,Motor Neurons
+SIBDL,,11.636692,1.439101,Reservoir,Motor Neurons
+SIBDR,,7.526342,0.642934,Reservoir,Motor Neurons
+SIBVL,,6.446023,2.816798,Reservoir,Motor Neurons
+SIBVR,,9.411057,1.181019,Reservoir,Motor Neurons
+SIADL,,6.686189,0.479924,Reservoir,Motor Neurons
+SIADR,,7.162559,-0.467144,Reservoir,Motor Neurons
+SIAVL,,7.144985,-1.538600,Reservoir,Motor Neurons
+SIAVR,,6.636882,-0.314846,Reservoir,Motor Neurons
+DA01,,5.451704,0.911401,Reservoir,Motor Neurons
+DA02,,7.823303,1.048741,Reservoir,Motor Neurons
+DA03,,8.404473,0.741431,Reservoir,Motor Neurons
+DA04,,5.775318,-1.530397,Reservoir,Motor Neurons
+DA05,,7.329507,0.164488,Reservoir,Motor Neurons
+DA06,,9.693105,-0.434945,Reservoir,Motor Neurons
+DA07,,9.892326,0.713137,Reservoir,Motor Neurons
+DA08,,9.761175,0.190421,Reservoir,Motor Neurons
+DA09,,7.014776,-2.222099,Reservoir,Motor Neurons
+PDA,,8.233233,1.227827,Reservoir,Motor Neurons
+DB01,,7.561118,-0.811180,Reservoir,Motor Neurons
+DB02,,7.537037,-1.644890,Reservoir,Motor Neurons
+DB03,,7.260485,-0.271109,Reservoir,Motor Neurons
+DB04,,8.068762,-0.095675,Reservoir,Motor Neurons
+DB05,,8.917003,0.163977,Reservoir,Motor Neurons
+DB06,,10.721023,0.468036,Reservoir,Motor Neurons
+DB07,,10.706741,-1.084682,Reservoir,Motor Neurons
+AS01,,8.789821,-0.390376,Reservoir,Motor Neurons
+AS02,,8.900214,0.890896,Reservoir,Motor Neurons
+AS03,,4.720968,-1.990565,Reservoir,Motor Neurons
+AS04,,5.838480,0.602767,Reservoir,Motor Neurons
+AS05,,10.205302,-0.490221,Reservoir,Motor Neurons
+AS06,,9.218485,0.818310,Reservoir,Motor Neurons
+AS07,,6.422552,0.596200,Reservoir,Motor Neurons
+AS08,,6.872158,2.274400,Reservoir,Motor Neurons
+AS09,,7.951150,2.453999,Reservoir,Motor Neurons
+AS10,,7.362412,0.884150,Reservoir,Motor Neurons
+AS11,,7.905813,-3.032938,Reservoir,Motor Neurons
+PDB,,6.526803,0.918767,Reservoir,Motor Neurons
+DD01,,7.917671,-1.678098,Reservoir,Motor Neurons
+DD02,,7.060432,0.374277,Reservoir,Motor Neurons
+DD03,,6.510471,1.462425,Reservoir,Motor Neurons
+DD04,,16.000000,0.000000,Readout,Motor Neurons
+DD05,,16.000000,0.500000,Readout,Motor Neurons
+DD06,,7.038936,2.713294,Reservoir,Motor Neurons
+VA01,,6.380201,0.298784,Reservoir,Motor Neurons
+VA02,,5.718460,-1.085447,Reservoir,Motor Neurons
+VA03,,7.110125,0.602005,Reservoir,Motor Neurons
+VA04,,9.413200,0.450729,Reservoir,Motor Neurons
+VA05,,7.440394,1.223233,Reservoir,Motor Neurons
+VA06,,9.198330,0.180308,Reservoir,Motor Neurons
+VA07,,8.856871,0.619194,Reservoir,Motor Neurons
+VA08,,6.519557,1.139352,Reservoir,Motor Neurons
+VA09,,7.014198,-0.905878,Reservoir,Motor Neurons
+VA10,,8.265420,-0.461255,Reservoir,Motor Neurons
+VA11,,7.802269,0.893037,Reservoir,Motor Neurons
+VA12,,9.570249,-0.296938,Reservoir,Motor Neurons
+VB01,,8.491517,-0.357452,Reservoir,Motor Neurons
+VB02,,8.344395,0.659997,Reservoir,Motor Neurons
+VB03,,7.074701,0.412255,Reservoir,Motor Neurons
+VB04,,8.901653,0.138462,Reservoir,Motor Neurons
+VB05,,10.594762,-0.912836,Reservoir,Motor Neurons
+VB06,,6.894410,-2.624819,Reservoir,Motor Neurons
+VB07,,9.365724,1.300624,Reservoir,Motor Neurons
+VB08,,7.880161,1.347714,Reservoir,Motor Neurons
+VB09,,8.275555,0.436185,Reservoir,Motor Neurons
+VB10,,8.169417,0.659928,Reservoir,Motor Neurons
+VB11,,8.152494,4.181003,Reservoir,Motor Neurons
+VD01,,6.250002,-2.781449,Reservoir,Motor Neurons
+VD02,,6.288978,-1.640015,Reservoir,Motor Neurons
+VD03,,7.349586,-0.252705,Reservoir,Motor Neurons
+VD04,,7.672200,0.812002,Reservoir,Motor Neurons
+VD05,,8.583899,1.126843,Reservoir,Motor Neurons
+VD06,,10.667384,1.834594,Reservoir,Motor Neurons
+VD07,,6.075116,-3.493432,Reservoir,Motor Neurons
+VD08,,9.352897,-2.753458,Reservoir,Motor Neurons
+VD09,,8.100135,0.053219,Reservoir,Motor Neurons
+VD10,,11.340752,-0.103821,Reservoir,Motor Neurons
+VD11,,7.239015,0.353715,Reservoir,Motor Neurons
+VD12,,8.368707,0.105068,Reservoir,Motor Neurons
+VD13,,7.087129,-1.833890,Reservoir,Motor Neurons
+dBWML1,,20.079125,-2.014304,Readout,Bodywall Muscles
+dBWML2,,19.741954,1.996824,Readout,Bodywall Muscles
+dBWML3,,19.895274,-0.210483,Readout,Bodywall Muscles
+dBWML4,,20.224956,-0.450167,Readout,Bodywall Muscles
+dBWML5,,20.257341,-0.517599,Readout,Bodywall Muscles
+dBWML6,,20.253200,0.944002,Readout,Bodywall Muscles
+dBWML7,,19.946746,-1.298546,Readout,Bodywall Muscles
+dBWMR1,,19.739223,-0.405103,Readout,Bodywall Muscles
+dBWMR2,,19.890465,-0.613011,Readout,Bodywall Muscles
+dBWMR3,,20.245886,-0.446546,Readout,Bodywall Muscles
+dBWMR4,,20.285920,-0.797430,Readout,Bodywall Muscles
+dBWMR5,,20.243141,-0.783376,Readout,Bodywall Muscles
+dBWMR6,,20.044144,1.456107,Readout,Bodywall Muscles
+dBWMR7,,19.896507,-0.657406,Readout,Bodywall Muscles
+vBWML1,,20.500848,1.426490,Readout,Bodywall Muscles
+vBWML2,,19.891999,0.973411,Readout,Bodywall Muscles
+vBWML3,,19.909981,1.058828,Readout,Bodywall Muscles
+vBWML4,,20.353962,-2.406774,Readout,Bodywall Muscles
+vBWML5,,20.257213,2.186952,Readout,Bodywall Muscles
+vBWML6,,20.011868,2.619385,Readout,Bodywall Muscles
+vBWML7,,20.038847,-1.855680,Readout,Bodywall Muscles
+vBWMR1,,19.451626,-0.500111,Readout,Bodywall Muscles
+vBWMR2,,20.178386,0.476112,Readout,Bodywall Muscles
+vBWMR3,,20.103403,-0.865628,Readout,Bodywall Muscles
+vBWMR4,,20.036000,-2.457999,Readout,Bodywall Muscles
+vBWMR5,,19.809978,-1.228190,Readout,Bodywall Muscles
+vBWMR6,,20.129932,-0.021240,Readout,Bodywall Muscles
+vBWMR7,,19.711118,-0.014287,Readout,Bodywall Muscles
+dBWML8,,19.827547,-1.000049,Readout,Bodywall Muscles
+dBWML9,,20.216037,0.170129,Readout,Bodywall Muscles
+dBWML10,,20.099591,1.325955,Readout,Bodywall Muscles
+dBWML11,,20.045064,0.826282,Readout,Bodywall Muscles
+dBWML12,,20.170741,1.755913,Readout,Bodywall Muscles
+dBWML13,,20.118965,2.118349,Readout,Bodywall Muscles
+dBWML14,,20.005652,-0.071804,Readout,Bodywall Muscles
+dBWML15,,20.425334,-0.764568,Readout,Bodywall Muscles
+dBWML16,,19.999286,1.379801,Readout,Bodywall Muscles
+dBWML17,,20.037452,2.107400,Readout,Bodywall Muscles
+dBWML18,,20.258530,0.437355,Readout,Bodywall Muscles
+dBWML19,,19.805575,0.850044,Readout,Bodywall Muscles
+dBWML20,,19.654345,0.366712,Readout,Bodywall Muscles
+dBWML21,,20.202110,0.319563,Readout,Bodywall Muscles
+dBWML22,,20.219919,3.058314,Readout,Bodywall Muscles
+dBWML23,,20.230983,0.400376,Readout,Bodywall Muscles
+dBWML24,,20.160415,0.638228,Readout,Bodywall Muscles
+dBWMR8,,19.671319,-0.624617,Readout,Bodywall Muscles
+dBWMR9,,20.306172,-0.065376,Readout,Bodywall Muscles
+dBWMR10,,20.145606,-1.509750,Readout,Bodywall Muscles
+dBWMR11,,20.016129,0.900438,Readout,Bodywall Muscles
+dBWMR12,,19.659621,0.521389,Readout,Bodywall Muscles
+dBWMR13,,19.954539,-1.409302,Readout,Bodywall Muscles
+dBWMR14,,19.990617,-2.844457,Readout,Bodywall Muscles
+dBWMR15,,19.468006,-1.765385,Readout,Bodywall Muscles
+dBWMR16,,19.752367,-1.759548,Readout,Bodywall Muscles
+dBWMR17,,19.568643,0.432342,Readout,Bodywall Muscles
+dBWMR18,,19.601454,0.165328,Readout,Bodywall Muscles
+dBWMR19,,20.196767,-0.003340,Readout,Bodywall Muscles
+dBWMR20,,20.023277,-0.567236,Readout,Bodywall Muscles
+dBWMR21,,19.629331,-0.065728,Readout,Bodywall Muscles
+dBWMR22,,20.240206,2.607367,Readout,Bodywall Muscles
+dBWMR23,,19.892448,-2.440984,Readout,Bodywall Muscles
+dBWMR24,,20.041587,0.564399,Readout,Bodywall Muscles
+vBWML8,,19.943262,-1.723368,Readout,Bodywall Muscles
+vBWML9,,20.506083,-3.539285,Readout,Bodywall Muscles
+vBWML10,,19.872507,-1.982438,Readout,Bodywall Muscles
+vBWML11,,19.840968,0.476777,Readout,Bodywall Muscles
+vBWML12,,20.034512,-1.066103,Readout,Bodywall Muscles
+vBWML13,,20.194251,0.933591,Readout,Bodywall Muscles
+vBWML14,,20.161845,-0.638448,Readout,Bodywall Muscles
+vBWML15,,20.262145,0.991061,Readout,Bodywall Muscles
+vBWML16,,20.627193,1.595189,Readout,Bodywall Muscles
+vBWML17,,20.289230,0.079468,Readout,Bodywall Muscles
+vBWML18,,19.677903,-0.556832,Readout,Bodywall Muscles
+vBWML19,,19.810552,-0.845953,Readout,Bodywall Muscles
+vBWML20,,20.138785,-0.835167,Readout,Bodywall Muscles
+vBWML21,,19.776222,-0.613992,Readout,Bodywall Muscles
+vBWML22,,19.959778,0.614002,Readout,Bodywall Muscles
+vBWML23,,19.761841,0.475976,Readout,Bodywall Muscles
+vBWMR8,,20.019505,1.986578,Readout,Bodywall Muscles
+vBWMR9,,19.946707,-0.201718,Readout,Bodywall Muscles
+vBWMR10,,19.707161,-2.077894,Readout,Bodywall Muscles
+vBWMR11,,20.077627,-0.374234,Readout,Bodywall Muscles
+vBWMR12,,20.125936,-1.338992,Readout,Bodywall Muscles
+vBWMR13,,20.477128,0.183346,Readout,Bodywall Muscles
+vBWMR14,,20.261758,-0.340380,Readout,Bodywall Muscles
+vBWMR15,,19.959375,1.035078,Readout,Bodywall Muscles
+vBWMR16,,20.138939,-1.680383,Readout,Bodywall Muscles
+vBWMR17,,19.616827,-1.646802,Readout,Bodywall Muscles
+vBWMR18,,19.646057,0.089356,Readout,Bodywall Muscles
+vBWMR19,,19.897187,-0.552016,Readout,Bodywall Muscles
+vBWMR20,,19.659759,1.169351,Readout,Bodywall Muscles
+vBWMR21,,20.109853,-0.134434,Readout,Bodywall Muscles
+vBWMR22,,20.255295,-1.310969,Readout,Bodywall Muscles
+vBWMR23,,20.103675,0.522662,Readout,Bodywall Muscles
+vBWMR24,,20.087314,-1.093871,Readout,Bodywall Muscles
+CEPshDL,,20.081710,-0.772322,Readout,Other-end Organs
+CEPshDR,,19.775888,-1.804902,Readout,Other-end Organs
+CEPshVL,,20.259454,-1.268916,Readout,Other-end Organs
+CEPshVR,,19.956772,-1.812978,Readout,Other-end Organs
+GLRDR,,19.925718,-4.848057,Readout,Other-end Organs
+GLRR,,19.728260,-2.139654,Readout,Other-end Organs
+GLRVL,,19.746387,-0.319901,Readout,Other-end Organs
+GLRVR,,19.918663,2.916597,Readout,Other-end Organs
+CANL,,19.857057,-0.375048,Readout,Other-end Organs
+CANR,,19.607671,-0.716074,Readout,Other-end Organs
+exc_cell,,19.665506,0.045449,Readout,Other-end Organs
+exc_gl,,20.213272,0.606380,Readout,Other-end Organs
+hyp,,19.824845,-2.445814,Readout,Other-end Organs
+int,,20.365003,3.075064,Readout,Other-end Organs
+mu_intL,,20.030125,-1.484852,Readout,Other-end Organs
+mu_intR,,20.299443,-0.888984,Readout,Other-end Organs
+HSNL,,7.295286,1.329566,Reservoir,Sex-specific Cells
+HSNR,,5.922170,-2.935131,Reservoir,Sex-specific Cells
+VC01,,8.631026,0.601107,Reservoir,Sex-specific Cells
+VC02,,8.142713,0.745027,Reservoir,Sex-specific Cells
+VC03,,9.623361,1.455672,Reservoir,Sex-specific Cells
+VC04,,7.147146,1.214958,Reservoir,Sex-specific Cells
+VC05,,8.259871,-0.758314,Reservoir,Sex-specific Cells
+VC06,,6.210041,0.970456,Reservoir,Sex-specific Cells
+vm2AL,,19.911594,0.069652,Readout,Sex-specific Cells
+vm2AR,,19.801763,-2.325772,Readout,Sex-specific Cells
+vm1AR,,20.042897,-0.093209,Readout,Sex-specific Cells
+vm2PL,,20.299757,1.202556,Readout,Sex-specific Cells
+vm2PR,,20.263326,-1.123315,Readout,Sex-specific Cells
