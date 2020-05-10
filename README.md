@@ -21,7 +21,7 @@ Connectome from [Whole-animal connectomes of both Caenorhabditis elegans sexes](
 
 #### GeneticAlgorithm
 
-Source files for running the genetic algorithm specified in section III. The main file is `genetic.m`, which can be run directly from the command window in `MATLAB`. 
+Source files for running the genetic algorithm specified in section III. The main file is `genetic.m`, which can be run directly from the command window in `MATLAB`. Neural signals in `worm_data.mat` does not correspond to the data used in the study. A placeholder was created preserving some features of the original calcium traces in [Pan-neuronal imaging in roaming *Caenorhabditis elegans*](https://www.pnas.org/content/113/8/E1082.long).
 
 #### Pentropy
 
@@ -33,7 +33,7 @@ Necessary files to compute permutation pentropy in <u>figure 3b</u>.  The main f
 
 #### StatisticalTest
 
-Chi squared test to compare distributions in <u>figure 5b</u>.
+Chi-square test to compare distributions in <u>figure 5b</u>.
 
 
 
