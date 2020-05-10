@@ -129,7 +129,7 @@ for iR in range(1000):
             npmean = np.mean(response_interseries[:, :, p, n], 1).reshape(response_interseries[:, :, p, n].shape[0], 1)
             npstd = np.std(response_interseries[:, :, p, n], 1).reshape(response_interseries[:, :, p, n].shape[0], 1)
             norm_interseries = (response_interseries[:, :, p, n] - npmean) / npstd
-            corr_mat = np.triu(np.corrcoef(norm_interseries), 1).flatten()
+            corr_mat = np.triu(np.corrcoef(norm_interseries), 1)[0,:].flatten()
             index = np.where(corr_mat == 0)
             corr_vec_p = corr_vec_p + np.delete(corr_mat, index).tolist()
         corr_vec_n.append(corr_vec_p)
