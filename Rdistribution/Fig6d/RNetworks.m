@@ -18,7 +18,7 @@ rng(runSeed);
 
 % Load network from the genetic algorithm
 load('Networks.mat');
-connectivityMatrix = fig6_Rdistro;
+connectivityMatrix = optimalInhi48;
 if isfile('fig6_Rdistro.csv')
     fprintf('Deleting previous fig6_Rdistro.csv...\n')
     delete 'fig6_Rdistro.csv';
