@@ -29,7 +29,6 @@ nNeurons = size(connectivityMatrix, 1);
 totalTime = 500;
 
 % Create random weights between input and neurons
-% weightInputNeuron = 2 * rand(nNeurons, 1) - 1;
 weightInputNeuron = csvread('weights.csv');
 
 % Define simulation parameters
@@ -62,7 +61,7 @@ parfor iIteration = 1:nIterationsTotal
             responseIntraseries(iPulse, :, :, iIterationIntra) = neuronActivityLow;
         end 
         for iNeuron = 1:nNeurons
-           correlationIntraseries(iNeuron, :, iIterationIntra) = nonzeros(triu(corrcoef(responseIntraseries(:, :, iNeuron, iIterationIntra)')) - eye(nPulses))';     
+           correlationIntraseries(iNeuron, :, iIterationIntra) = nonzeros(triu(corrcoef(responseIntraseries(:, :, iNeuron, iIterationIntra)'),1))';     
         end
     end
     
@@ -87,7 +86,7 @@ parfor iIteration = 1:nIterationsTotal
     end
     
     % Calculate mean of R
-    R = zeros(nNeurons, 1);
+    R = nan(nNeurons, 1);
     for iNeuron = 1:nNeurons
         R(iNeuron) = computeReliability(correlationIntraseries(iNeuron,:,:), correlationInterseries(iNeuron,:,:), nBins);
     end
