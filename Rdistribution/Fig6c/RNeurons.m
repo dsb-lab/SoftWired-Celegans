@@ -19,7 +19,6 @@ nNeurons = size(connectivityMatrix, 1);
 totalTime = 500;
 
 % Create random weights between input and neurons
-% weightInputNeuron = 2 * rand(nNeurons, 1) - 1;
 weightInputNeuron = csvread('weights.csv');
 
 % Define simulation parameters
@@ -32,8 +31,8 @@ initialTimeLow = 15;
 % Main loop
 nPulses = 20;
 nIterationsTotal = 1;
-nIterationsIntra = 52;
-nIterationsInter = 32;
+nIterationsIntra = 526;
+nIterationsInter = 100;
 
 for iIteration = 1:nIterationsTotal
     
@@ -77,7 +76,7 @@ end
 
 %% Calculate cumulative distribution and R for the different neurons
 
-numNeuron = 200;
+numNeuron = 218;
 nBins = 100;
 cumulativeDistIntra = nan(nNeurons, nBins);
 cumulativeDistInter = nan(nNeurons, nBins);
@@ -115,3 +114,4 @@ xlabel('$R$','Interpreter', 'Latex', 'FontSize', 18);
 ylabel('pdf', 'FontSize', 18, 'Interpreter', 'Latex');
 legend(legendLabel, 'Location', 'NorthEast', 'Fontsize', 15, 'Interpreter', 'Latex')
 grid on
+xlim([-0.8 0.6])
