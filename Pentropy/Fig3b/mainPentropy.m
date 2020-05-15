@@ -1,4 +1,9 @@
-clc; clear; close all;
+% Clear command window and workspace
+clear;
+clc;
+
+% Add path to dependencies
+addpath '../Dependencies'
 
 % Print number of cores
 %numcores = feature('numcores');
@@ -9,9 +14,8 @@ runSeed = 5000;
 rng(runSeed)
 
 %load optimal network
-addpath('Matlab_data');
-mat = load('optimalNetwork.mat');
-W = abs(mat.A_norm_max_inh);
+load('Networks.mat');
+connectivityMatrix = abs(optimalInhi48);
 
 %parameter initialization
 time = 2000;
@@ -21,7 +25,7 @@ Hmean = NaN(1,length(inhibition));
 num_trials = 8000;
 num_sets = 10;
 num_trials_set = num_trials / num_sets;
-N = length(W);
+N = length(connectivityMatrix);
 
 for i = 1:length(inhibition)
 
@@ -30,7 +34,7 @@ for i = 1:length(inhibition)
 
     parfor j = 1:num_trials
 
-        W_trial = randomInhibition(W,inhi); %inhibit optimal network
+        W_trial = randomInhibition(connectivityMatrix,inhi); %inhibit optimal network
         rows_inhi_W = checkInhibition(W_trial);
         X = simulation(time,W_trial); %simulate dynamics
         for k = 1:N
@@ -43,7 +47,7 @@ for i = 1:length(inhibition)
     Hmean_set = [];
     Hstd_set = [];
     for j = 1:num_sets
-        Hmean_neurons = mean(H(:,:,j)) %mean across neurons
+        Hmean_neurons = mean(H(:,:,j)); %mean across neurons
         Hmean_set(j) = mean(Hmean_neurons); %mean across networks
         Hstd_set(j) = std(Hmean_neurons); %std across networks
     end
