@@ -1,6 +1,6 @@
 clear; clc;
 
-addpath('Connectome')
+addpath('Data/')
 
 load('Connectome_full.mat')
 

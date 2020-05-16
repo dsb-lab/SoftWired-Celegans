@@ -1,6 +1,6 @@
 
 clear;clc;
-addpath('Connectome/');
+addpath('Data/');
 
 %importing data from hermaphrodite chemical connectome
 
