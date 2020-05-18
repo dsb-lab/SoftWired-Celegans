@@ -10,7 +10,7 @@ runSeed = 1234;
 rng(runSeed);
 
 % Load network from the genetic algorithm
-load("Networks.mat");
+load("randomInhi95.mat");
 connectivityMatrix = randomInhi95;
 legendLabel = 'Random 95\% inhibition';
 nNeurons = size(connectivityMatrix, 1);

@@ -14,7 +14,7 @@ runSeed = 5000;
 rng(runSeed)
 
 %load optimal network
-load('Networks.mat');
+load('optimalInhi48.mat');
 connectivityMatrix = abs(optimalInhi48);
 
 %parameter initialization
