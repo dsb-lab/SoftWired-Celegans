@@ -1,19 +1,20 @@
-%% Genetic Algorithm
-
+% Clear command window and workspace
 clear;
 clc;
-close all;
+
+% Add path to dependencies
+addpath '../Dependencies'
 
 % Load data
-load mat/newConnectome_minimal.mat  % Connectome
-load mat/worm_data.mat  % Neural signals
+load newConnectome_minimal.mat  % Connectome
+load worm_data.mat  % Neural signals
 
 % Clean workspace
 clearvars -except neurons_pruned neuronal_data A_pruned list_pruned
 
 % Print number of cores
-% numcores = feature('numcores');
-% ppool = parpool('local',numcores);
+numcores = feature('numcores');
+ppool = parpool('local',numcores);
 
 % Normalize and Standardize Data
 neuronalDataStandardized = normalizeSignals(neuronal_data);

@@ -1,15 +1,15 @@
-%% Genetic Algorithm
-
+% Clear command window and workspace
 clear;
 clc;
-close all;
+
+% Add path to dependencies
+addpath '../Dependencies'
 
 % Load pruned data 
 load data_python_50.mat
 
 % Load neuronal_data
 load worm_data.mat
-
 delete 'cluster_matrix.csv';
 
 % Clear other variables
@@ -21,12 +21,8 @@ parpool('local',numcores)
 
 % Normalize and Standardize Data
 neuronal_data_standardized = normalize(neuronal_data);
-%neuronal_data_standardized = normalize(neuronal_data,2);
-%neuronal_data_standardized = (neuronal_data - mean(neuronal_data,2))./(std(neuronal_data,0,2));
-%neuronal_data_standardized = (neuronal_data - mean(neuronal_data,2))./(max(neuronal_data,[],2)-min(neuronal_data,[],2));
 
 % Normalize connectivity matrix by dividing each row by its maximum%
-%A = A_norm_max;
 A = A_prunned/max(max(A_prunned));
 
 % Set Algorithm Parameters
@@ -45,8 +41,6 @@ neurons_indexes = [13, 54, 56, 58, 59, 173, 188];
 
 % Cluster matrix
 num_iterations_cluster = 100;
-%cluster_matrix = [];
-%k = 1;
 
 datetime('now')
 
@@ -104,41 +98,7 @@ else
     best_individual_ratio(iterations) = ratioEI([best_individuals_all{end,1}]);
 end
 
-
-% if mod(iterations,5) == 0 && iterations ~=num_iterations_algorithm
-%     t = toc;
-%     fprintf('\nIterations Completed:                          %d\n',iterations);
-%     fprintf('Mean Seconds per iteration:                    %fs\n',t/iterations);
-%     fprintf('Estimated time to Complete Iterations:         %dh %dmin %ds\n',...
-%         round(((num_iterations_algorithm-iterations)*(t/iterations))/3600), floor(mod(((num_iterations_algorithm-iterations)*(t/iterations)),3600)/60), ...
-%         round(mod(mod(((num_iterations_algorithm-iterations)*(t/iterations)),3600),60)));
-%     [~,col] = find([best_individuals_all{1:iterations,4}] == max([best_individuals_all{1:iterations,4}]));
-%     if length(col)>1
-%         col = col(1);
-%     end
-%     fprintf('Mean Fitness of Selected Individuals (%d/%d): %f\n',num_selected,num_individuals,mean(best_fitness(1:num_selected)));
-%     fprintf('Fitness of Best Individual:                    %f\n',max([best_individuals_all{:,4}]));
-%     fprintf('Percentage of inhibition of Best Individual:   %f%%\n\n',ratioEI(best_individuals_all{col,1}));
-%     
-% elseif iterations== num_iterations_algorithm
-%     t = toc;
-%     fprintf('\nNumber of completed iterations:                %d\n',iterations);
-%     fprintf('Total time to Completation:                    %dh %dmin %ds\n',...
-%         round(((num_iterations_algorithm)*(t/iterations))/3600), floor(mod((num_iterations_algorithm*(t/iterations)),3600)/60), ...
-%         round(mod(mod(((num_iterations_algorithm)*(t/iterations)),3600),60)));
-%     fprintf('Total Mean Seconds per iteration:              %fs\n',t/iterations);
-%     [~,col] = find([best_individuals_all{1:iterations,4}] == max([best_individuals_all{1:iterations,4}]));
-%     if length(col)>1
-%        col = col(1);
-%     end
-%     fprintf('Mean Fitness of Best Individuals (%d):         %f\n',iterations,mean([best_individuals_all{1:iterations,4}])); 
-%     fprintf('Fitness of Best Individual:                    %f\n',max([best_individuals_all{1:iterations,4}]));
-%     fprintf('Percentage of inhibition of Best Individual:   %f%%\n\n',ratioEI(best_individuals_all{col,1}));
-% end
-
 dlmwrite('cluster_matrix.csv',[runSeed,best_individual_ratio(iterations), best_individuals_all{iterations,4}],'-append');
-%cluster_matrix(k,:) = [runSeed, best_individual_ratio(iterations), best_individuals_all{iterations,4}];
-%k = k + 1;
 
 end
 
