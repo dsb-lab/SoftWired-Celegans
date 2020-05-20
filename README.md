@@ -21,7 +21,7 @@ Connectome from [Whole-animal connectomes of both Caenorhabditis elegans sexes](
 
 #### GeneticAlgorithm
 
-Source files for running the genetic algorithm specified in section III. The main file is `genetic.m`, which can be run directly from the command window in `MATLAB`. Neural signals in `worm_data.mat` does not correspond to the data used in the study. A placeholder was created preserving some features of the original calcium traces in [Pan-neuronal imaging in roaming *Caenorhabditis elegans*](https://www.pnas.org/content/113/8/E1082.long).
+Source files for running the genetic algorithm specified in section III. Contains the code necessary to reproduce <u>figure 2</u> and <u>figure 3a</u>. Neural signals in `worm_data.mat` does not correspond to the data used in the study. A placeholder was created preserving some features of the original calcium traces in [Pan-neuronal imaging in roaming *Caenorhabditis elegans*](https://www.pnas.org/content/113/8/E1082.long).
 
 #### Pentropy
 
