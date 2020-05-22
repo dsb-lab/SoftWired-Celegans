@@ -33,7 +33,7 @@ set(gca, 'FontSize', default_font*scale)
 xlabel('Iterations','FontSize', 12*scale,'Interpreter','latex');
 ylabel('Fitness','FontSize', 12*scale,'Interpreter','latex');
 title(['Temporal Evolution',' (',num2str(mean(best_individuals_all{end,3})),', ',num2str(calculateExciInhiRatio(best_individuals_all{end,1})),...
-    ', ',num2str(best_individuals_all{end,5}),', ',num2str(best_individuals_all{end,6}),')'],'FontSize', 15*scale,'Interpreter','latex');
+        ')'],'FontSize', 15*scale,'Interpreter','latex');
 ylim([0 1]);
 xlim([1 iterations])
 

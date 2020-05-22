@@ -6,21 +6,21 @@ clc;
 addpath '../Dependencies'
 
 % Load data
-load newConnectome_minimal.mat  % Connectome
-load worm_data.mat  % Neural signals
+load connectomeData.mat  % Connectome
+load wormData.mat  % Neural signals
 
 % Clean workspace
-clearvars -except neurons_pruned neuronal_data A_pruned list_pruned
+clearvars -except neuronalData connectomePruned listPruned
 
 % Print number of cores
 numcores = feature('numcores');
 ppool = parpool('local',numcores);
 
 % Normalize and Standardize Data
-neuronalDataStandardized = normalizeSignals(neuronal_data);
+neuronalDataStandardized = normalizeSignals(neuronalData);
 
 % Normalize connectivity matrix by dividing each row by its maximum
-A = A_pruned/max(max(A_pruned)); % Normalization for genetic algorithm
+A = connectomePruned/max(max(connectomePruned)); % Normalization for genetic algorithm
 
 % Set Algorithm Parameters
 nIterations = 100; % Number of iterations of the optimization
@@ -34,17 +34,14 @@ nMutations = 5;
 bestIndividualsAll = cell(nIterations, 6); % Stores connectivity matrix, signals and correlation of best individuals
 bestIndividualIteration = NaN(nIterations, 1); % Index of Best individuals of each iteration
 inputs = [neuronalDataStandardized(32,:); neuronalDataStandardized(69,:)]; % Corrsponds to temperature neurons: AFDL (32) & AFDR (69)
-time = linspace(0, length(neuronal_data)/10, length(neuronal_data));
+time = linspace(0, length(neuronalData)/10, length(neuronalData));
 
 % Create random stream
-runSeed = 433; %644; %23011
-s = RandStream.create('mrg32k3a','NumStreams',1,'Seed',runSeed);
+runSeed = 433;
+s = RandStream.create('mrg32k3a', 'NumStreams', 1, 'Seed', runSeed);
 CC = NaN(7, nIterations);
 
-% Real sign
-realSign = csvread('csv/sign.csv');
-indexes = find(realSign ~= 0);
-idxNeurons = [127 157 155 141 142 148 167];
+% Ratio best individual
 bestIndividualRatio = NaN(1,nIterations);
 
 % Initialize first population
@@ -64,14 +61,9 @@ for iterations = 1:nIterations
     bestIndividualsAll{iterations,2} = individualStates{bestIndividuals(1)}; % Second column: best time series from simulation
     bestIndividualsAll{iterations,3} = fitnessPopulation{bestIndividuals(1)};
     bestIndividualsAll{iterations,4} = meanFitness(bestIndividuals(1)); % Third column: best mean fitness
-    bestSign = (sum(bestIndividualsAll{iterations,1},2) > 0) + -(sum(bestIndividualsAll{iterations,1},2) < 0);
-    accuracyAll = 100*sum(realSign(indexes) == bestSign(indexes))/length(indexes);
-    bestIndividualsAll{iterations,5} = accuracyAll ;
-    accuracy7 = sum(realSign(idxNeurons) == bestSign(idxNeurons));
-    bestIndividualsAll{iterations,6} = accuracy7;
     nextPopulation = generateNextPopulation(nextPopulation, A, bestIndividuals, nSelected, nChildren, nImmigrants, nMutations, s);
-    bestIndividualIteration(iterations) = max([bestIndividualsAll{:,4}]); %mean(mean_fitness);%max([best_individuals_all{:,4}]);
-    bestIndividualRatio(iterations) = calculateExciInhiRatio([bestIndividualsAll{iterations,1}]);%;ratioEI(next_population);%ratioEI([best_individuals_all{iterations,1}]);
+    bestIndividualIteration(iterations) = max([bestIndividualsAll{:,4}]);
+    bestIndividualRatio(iterations) = calculateExciInhiRatio([bestIndividualsAll{iterations,1}]);
     
 if mod(iterations,5) == 0
     t2 = datetime();

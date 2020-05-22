@@ -5,25 +5,22 @@ clc;
 % Add path to dependencies
 addpath '../Dependencies'
 
-% Load pruned data 
-load newConnectome_minimal.mat
-
 % Load data
-load newConnectome_minimal.mat  % Connectome
-load worm_data.mat  % Neural signals
+load connectomeData.mat  % Connectome
+load wormData.mat  % Neural signals
 
 % Clear other variables
-clearvars -except A_norm_max list_prunned neuronal_data A_pruned
+clearvars -except connectomeNormMax listPruned neuronalData connectomePruned
 
 % Print number of cores
 numcores = feature('numcores');
 parpool('local', numcores)
 
 % Normalize and Standardize Data
-neuronalDataStandardized = normalize(neuronal_data);
+neuronalDataStandardized = normalize(neuronalData);
 
 % Normalize connectivity matrix by dividing each row by its maximum%
-A = A_pruned/max(max(A_pruned));
+A = connectomePruned/max(max(connectomePruned));
 
 % Set Algorithm Parameters
 nIterations = 100; % Number of iterations of the optimization
