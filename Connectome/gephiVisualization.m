@@ -6,16 +6,16 @@ clc;
 addpath 'Data/'
 
 % Load connectome data
-load('Connectome_full.mat')
-neuronsGephi = neurons;
+load('connectomeFullData.mat')
+neuronsGephi = nameNeurons;
 nNeurons = length(neuronsGephi);
 
 % Classify each neuron according their position in the reservoir computing
 % architecture
 for iNeuron = 1:nNeurons
-    if any(strcmp(reservoirNeurons,string(neurons(iNeuron))))
+    if any(strcmp(reservoirNeurons,string(neuronsGephi(iNeuron))))
         neuronsGephi(iNeuron, 2) = {'Reservoir'};
-    elseif any(strcmp(inputLayer{1,1},string(neurons(iNeuron))))
+    elseif any(strcmp(inputLayer{1,1},string(neuronsGephi(iNeuron))))
         neuronsGephi(iNeuron ,2) = {'Input'};
     else
         neuronsGephi(iNeuron ,2) = {'Readout'};
@@ -97,7 +97,7 @@ fileID = fopen('Gephi/edges.csv','w');
 fprintf(fileID,'Source, Target\n');
 for iNeuron = 1:nNeurons
     for jNeuron = 1:nNeurons
-        if A(iNeuron, jNeuron)>0
+        if connectome(iNeuron, jNeuron)>0
             fprintf(fileID,'%s,%s\n',string(neuronsGephi(iNeuron, 1)),string(neuronsGephi(jNeuron, 1)));
         end
     end
