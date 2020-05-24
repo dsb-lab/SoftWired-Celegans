@@ -3,8 +3,9 @@ Code for the paper *Soft-wired long-term memory in a natural recurrent neuronal 
 ](https://arxiv.org/abs/2004.00498), [bioRxiv 2020.04.01.020180](https://www.biorxiv.org/content/10.1101/2020.04.01.020180v1.abstract)).
 
 <p align="center">
-    <img width="750" height="320"src="graph.png">
+    <img width="750" height="320"src="others/graph.png">
 </p>
+
 
 #### AlgorithmOutput
 
@@ -22,6 +23,10 @@ Connectome from [Whole-animal connectomes of both Caenorhabditis elegans sexes](
 #### GeneticAlgorithm
 
 Source files for running the genetic algorithm specified in section III. Contains the code necessary to reproduce <u>figure 2</u> and <u>figure 3a</u>. Neural signals in `worm_data.mat` does not correspond to the data used in the study. A placeholder was created preserving some features of the original calcium traces in [Pan-neuronal imaging in roaming *Caenorhabditis elegans*](https://www.pnas.org/content/113/8/E1082.long).
+
+#### Others
+
+Additional complementary resources.
 
 #### Pentropy
 
