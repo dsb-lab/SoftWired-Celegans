@@ -3,7 +3,7 @@ Code for the paper *Soft-wired long-term memory in a natural recurrent neuronal 
 ](https://arxiv.org/abs/2004.00498), [bioRxiv 2020.04.01.020180](https://www.biorxiv.org/content/10.1101/2020.04.01.020180v1.abstract)).
 
 <p align="center">
-    <img width="750" height="320"src="others/graph.png">
+    <img width="750" height="320"src="Others/graph.png">
 </p>
 
 
