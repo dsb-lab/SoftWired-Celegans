@@ -1,17 +1,16 @@
-function [rows_inhibited, B_inhibition] = applyRowsInhibition(A, B)
+function [inhibitedRows, inhibitionB] = applyRowsInhibition(connectivityMatrixA, connectivityMatrixB)
 % Takes the inhibitory rows of A and copies them to matrix B.
 
 if nargin == 1
-    rows_inhibited = sum(A,2);
-    [rows_inhibited] = find(rows_inhibited < 0);
+    inhibitedRows = sum(connectivityMatrixA,2);
+    inhibitedRows = find(inhibitedRows < 0);
 else
-    rows_inhibited = sum(A,2);
-    [rows_inhibited] = find(rows_inhibited < 0);
-    B_inhibition = B;
-    for i = 1:length(rows_inhibited)
-        B_inhibition(rows_inhibited(i),:) = -B_inhibition(rows_inhibited(i),:);
+    inhibitedRows = sum(connectivityMatrixA,2);
+    inhibitedRows = find(inhibitedRows < 0);
+    inhibitionB = connectivityMatrixB;
+    for iRow = 1:length(inhibitedRows)
+        inhibitionB(inhibitedRows(iRow),:) = -inhibitionB(inhibitedRows(iRow),:);
     end
-    
 end
 
 end

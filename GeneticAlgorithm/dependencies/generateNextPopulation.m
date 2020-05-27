@@ -1,4 +1,4 @@
-function nextPopulation = generateNextPopulation(initialPopulation, A, bestIndividuals, nSelected, nChildren, nImmigrants, nMutations, s)
+function nextPopulation = generateNextPopulation(initialPopulation, connectivityMatrix, bestIndividuals, nSelected, nChildren, nImmigrants, nMutations, s)
 % Generates the next population of the algorithm. Since the algorithm uses
 % elitism, mutations are included in the form of immigrants.
 
@@ -28,7 +28,7 @@ if nImmigrants > 1
     migrationElitist = nImmigrants/2;
     
     for iSelected = 1:migrationRandom
-     nextPopulation{iSelected + nSelected + nChildren} = cell2mat(generateRandomIndividuals(A, 1, s));
+     nextPopulation{iSelected + nSelected + nChildren} = cell2mat(generateRandomIndividuals(connectivityMatrix, 1, s));
     end
 
     for iSelected = 1:migrationElitist
@@ -43,30 +43,6 @@ else
     end
     
 end
-
-
-% for i = num_selected/2:num_children
-%    pairs(i,:) = randsample(length(idx_best_selected),2)'; 
-%    
-% end
-% 
-% for i = 1:length(idx_best_selected)
-%     next_population{i} = initial_population{idx_best_selected(i)};
-%     mothers{i} = initial_population{idx_best_selected(i)};
-% end
-% 
-% for i = (length(idx_best_selected)+1):(length(idx_best_selected)+m)
-%     next_population{i} = recombination(mothers{pairs(i-length(idx_best_selected),1)},mothers{pairs(i-length(idx_best_selected),2)});
-% end
-% 
-% for i =(length(idx_best_selected)+m+1):(n+m+p)-10
-%      next_population{i} = cell2mat(random_individuals(A,1));
-% end
-% 
-% 
-% for i =(n+m+p)-9:(n+m+p)
-%      next_population{i} = 
-% end
 
 end
 

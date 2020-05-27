@@ -20,7 +20,7 @@ ppool = parpool('local',numcores);
 neuronalDataStandardized = normalizeSignals(neuronalData);
 
 % Normalize connectivity matrix by dividing each row by its maximum
-A = connectomePruned/max(max(connectomePruned)); % Normalization for genetic algorithm
+connectivityMatrix = connectomePruned/max(max(connectomePruned)); % Normalization for genetic algorithm
 
 % Set Algorithm Parameters
 nIterations = 100; % Number of iterations of the optimization
@@ -45,7 +45,7 @@ CC = NaN(7, nIterations);
 bestIndividualRatio = NaN(1,nIterations);
 
 % Initialize first population
-nextPopulation = generateRandomIndividuals(A, nIndividuals, s); % Generate random population in the first iteration
+nextPopulation = generateRandomIndividuals(connectivityMatrix, nIndividuals, s); % Generate random population in the first iteration
 
 % Intialize time
 t1 = datetime();
@@ -61,9 +61,9 @@ for iterations = 1:nIterations
     bestIndividualsAll{iterations,2} = individualStates{bestIndividuals(1)}; % Second column: best time series from simulation
     bestIndividualsAll{iterations,3} = fitnessPopulation{bestIndividuals(1)};
     bestIndividualsAll{iterations,4} = meanFitness(bestIndividuals(1)); % Third column: best mean fitness
-    nextPopulation = generateNextPopulation(nextPopulation, A, bestIndividuals, nSelected, nChildren, nImmigrants, nMutations, s);
+    nextPopulation = generateNextPopulation(nextPopulation, connectivityMatrix, bestIndividuals, nSelected, nChildren, nImmigrants, nMutations, s);
     bestIndividualIteration(iterations) = max([bestIndividualsAll{:,4}]);
-    bestIndividualRatio(iterations) = calculateExciInhiRatio([bestIndividualsAll{iterations,1}]);
+    bestIndividualRatio(iterations) = calculateExciInhiRatio([bestIndividualsAll{iterations, 1}]);
     
 if mod(iterations,5) == 0
     t2 = datetime();

@@ -1,5 +1,5 @@
-function states = simulateReservoirNopar(population,inputs)
-% Simulates reservoir activity using a discrete map. No parallel computing used.ion
+function states = simulateReservoirNopar(population, inputs)
+% Simulates reservoir activity using a discrete map. No parallel computing used.
 
 % Initialization of states
 states = cell(length(population),1);
@@ -7,21 +7,22 @@ states = cell(length(population),1);
 % Input signals
 AFDL = inputs(1,:);
 AFDR = inputs(2,:);
+totalTime = length(inputs);
 
-for i = 1:length(population)
-states_input = zeros(length(population{i}),1); % Initialize states for individual
+for iIndividual = 1:length(population)
+statesInput = zeros(length(population{iIndividual}), 1); % Initialize states for individual
 
-    for j = 1:length(inputs)
-        states_input(15,:) = (AFDL(j)); % Set value of neuron AFDL the value of the position j of the time series
-        states_input(16,:) = (AFDR(j)); % Set value of neuron AFDR the value of the position j of the time series
-        if j == 1
-            states{i}(:,j) = tanh(states_input(:,j)'*population{i}); % Simulation for the iteration j = 1
-            states{i}(15,j) = tanh(AFDL(j)); % Rewrite the values of AFDL 
-            states{i}(16,j) = tanh(AFDR(j)); % Rewrite the values of AFDR 
+    for iTime = 1:totalTime
+        statesInput(15, :) = (AFDL(iTime)); % Set value of neuron AFDL the value of the position iTime of the time series
+        statesInput(16, :) = (AFDR(iTime)); % Set value of neuron AFDR the value of the position iTime of the time series
+        if iTime == 1
+            states{iIndividual}(:, iTime) = tanh(statesInput(:,iTime)' * population{iIndividual}); % Simulation for the iteration iTime = 1
+            states{iIndividual}(15, iTime) = tanh(AFDL(iTime)); % Rewrite the values of AFDL 
+            states{iIndividual}(16, iTime) = tanh(AFDR(iTime)); % Rewrite the values of AFDR 
         else
-            states{i}(:,j) = tanh(states{i}(:,j-1)'*population{i}); % Simulation for the iteration j != 1
-            states{i}(15,j) = tanh(AFDL(j)); % Rewrite the values of AFDL 
-            states{i}(16,j) = tanh(AFDR(j)); % Rewrite the values of AFDR
+            states{iIndividual}(:, iTime) = tanh(states{iIndividual}(:, iTime-1)' * population{iIndividual}); % Simulation for the iteration iTime != 1
+            states{iIndividual}(15, iTime) = tanh(AFDL(iTime)); % Rewrite the values of AFDL 
+            states{iIndividual}(16, iTime) = tanh(AFDR(iTime)); % Rewrite the values of AFDR
         end
     end
     

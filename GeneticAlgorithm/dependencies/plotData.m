@@ -1,60 +1,55 @@
-function plotData(iterations, best_individual_iteration, best_individuals_all, best_individual_ratio, neuronal_data_standardized, time)
+function plotData(nIterations, bestIndividualIteration, bestIndividualsAll, bestIndividualRatio, neuronalData, time)
 % Plots the genetic algorithm throughout iterations, including the inhibition, 
 % the best signals and the correlation evolution.
 
-
-original_size = [1 1 1280 800];
-actual_size = get(0,'ScreenSize');
-scale = actual_size(3)/original_size(3);
-
+originalSize = [1 1 1280 800];
+actualSize = get(0,'ScreenSize');
+scale = actualSize(3)/originalSize(3);
 columns = 2;
+defaultFont = get(gca,'FontSize');
 
-default_font = get(gca,'FontSize');
+ccAIBL = zeros(1,nIterations);
+ccAVAL = zeros(1,nIterations);
+ccAVBL = zeros(1,nIterations);
+ccAVDL = zeros(1,nIterations);
+ccAVDR = zeros(1,nIterations);
+ccRIML = zeros(1,nIterations);
+ccRMEL = zeros(1,nIterations);
 
-CC_AIBL = zeros(1,iterations);
-CC_AVAL = zeros(1,iterations);
-CC_AVBL = zeros(1,iterations);
-CC_AVDL = zeros(1,iterations);
-CC_AVDR = zeros(1,iterations);
-CC_RIML = zeros(1,iterations);
-CC_RMEL = zeros(1,iterations);
-
-idx_neurons = [127 157 155 141 142 148 167];
+idxPruned = [127 157 155 141 142 148 167];
 
 %%%%%%%%%%%%%%
 %%% Axis 1 %%%
 %%%%%%%%%%%%%%
 
 
-subplot(10,columns,1:(columns*3));
+subplot(10, columns, 1:(columns*3))
 yyaxis left
-plot(1:iterations,best_individual_iteration,'LineWidth',scale);
-set(gca, 'FontSize', default_font*scale)
-xlabel('Iterations','FontSize', 12*scale,'Interpreter','latex');
-ylabel('Fitness','FontSize', 12*scale,'Interpreter','latex');
-title(['Temporal Evolution',' (',num2str(mean(best_individuals_all{end,3})),', ',num2str(calculateExciInhiRatio(best_individuals_all{end,1})),...
-        ')'],'FontSize', 15*scale,'Interpreter','latex');
+plot(1:nIterations, bestIndividualIteration, 'LineWidth', scale)
+set(gca, 'FontSize', defaultFont*scale)
+xlabel('Iterations','FontSize', 12*scale, 'Interpreter', 'latex')
+ylabel('Fitness','FontSize', 12*scale, 'Interpreter', 'latex')
+title(['Temporal Evolution',' (',num2str(mean(bestIndividualsAll{end,3})),', ',num2str(calculateExciInhiRatio(bestIndividualsAll{end,1})),...
+        ')'],'FontSize', 15*scale, 'Interpreter','latex')
 ylim([0 1]);
-xlim([1 iterations])
+xlim([1 nIterations])
 
 yyaxis right
 
-plot(1:iterations,best_individual_ratio,'LineWidth',scale);
-ylabel('\% Inhibition','FontSize', 12*scale,'Interpreter','latex');
-ylim([0 100]);
+plot(1:nIterations, bestIndividualRatio, 'LineWidth', scale)
+ylabel('\% Inhibition','FontSize', 12 * scale,'Interpreter','latex')
+ylim([0 100])
 
 
-for i = 1:iterations
-    
-    correlations_time = cell2mat(best_individuals_all(i,3));
-    CC_AIBL(i) = correlations_time(1); 
-    CC_AVAL(i) = correlations_time(2); 
-    CC_AVBL(i) = correlations_time(3); 
-    CC_AVDL(i) = correlations_time(4); 
-    CC_AVDR(i) = correlations_time(5); 
-    CC_RIML(i) = correlations_time(6); 
-    CC_RMEL(i) = correlations_time(7); 
-
+for iIteration = 1:nIterations
+    correlationsTime = cell2mat(bestIndividualsAll(iIteration,3));
+    ccAIBL(iIteration) = correlationsTime(1); 
+    ccAVAL(iIteration) = correlationsTime(2); 
+    ccAVBL(iIteration) = correlationsTime(3); 
+    ccAVDL(iIteration) = correlationsTime(4); 
+    ccAVDR(iIteration) = correlationsTime(5); 
+    ccRIML(iIteration) = correlationsTime(6); 
+    ccRMEL(iIteration) = correlationsTime(7); 
 end
 
 
@@ -62,204 +57,198 @@ end
 %%% Axis 2 %%%
 %%%%%%%%%%%%%%
 
-subplot(10,columns,7);
-plot(time,normalize(best_individuals_all{end,2}(idx_neurons(1),:)),'r','LineWidth',scale);
+subplot(10, columns, 7)
+plot(time, normalize(bestIndividualsAll{end,2}(idxPruned(1),:)), 'r', 'LineWidth', scale)
 hold on
-plot(time,normalize(neuronal_data_standardized(6,:)),'b','LineWidth',scale)
+plot(time, normalize(neuronalData(6,:)), 'b', 'LineWidth', scale)
+title(['AIBL',' (',num2str(bestIndividualsAll{end,3}(1)),')'],'FontSize', 12*scale,'Interpreter','latex')
 xlim([0 226.1])
-set(gca,'xtick',[]); set(gca, 'FontSize', default_font*scale*0.75)
-%ylim([min(normalize(neuronal_data_standardized(6,:)))-1 max(normalize(neuronal_data_standardized(6,:)))+1])
 ylim([-5 5])
-title(['AIBL',' (',num2str(best_individuals_all{end,3}(1)),')'],'FontSize', 12*scale,'Interpreter','latex')
-set(gca,'xtick',[]);
+set(gca, 'xtick', [])
+set(gca, 'FontSize', defaultFont*scale*0.75)
 
 
 %%%%%%%%%%%%%%
 %%% Axis 9 %%%
 %%%%%%%%%%%%%%
 
-subplot(10,columns,8);
-plot(1:iterations,CC_AIBL,'Color',[107,142,35]/255,'LineWidth',scale);
+subplot(10, columns, 8)
+plot(1:nIterations, ccAIBL, 'Color', [107,142,35]/255, 'LineWidth',scale)
+title('AIBL correlation', 'FontSize', 12*scale, 'Interpreter', 'latex')
+xlim([1 nIterations])
 ylim([0 1])
-set(gca,'xtick',[]); set(gca, 'FontSize', default_font*scale*0.75)
-xlim([1 iterations]);
-title('AIBL correlation','FontSize', 12*scale,'Interpreter','latex')
-set(gca,'xtick',[]);
+set(gca, 'xtick', [])
+set(gca, 'FontSize', defaultFont*scale*0.75)
 
 
 %%%%%%%%%%%%%%
 %%% Axis 3 %%%
 %%%%%%%%%%%%%%
 
-subplot(10,columns,9);
-plot(time,normalize(best_individuals_all{end,2}(idx_neurons(2),:)),'r','LineWidth',scale);
+subplot(10, columns, 9)
+plot(time, normalize(bestIndividualsAll{end,2}(idxPruned(2),:)), 'r', 'LineWidth', scale)
 hold on
-plot(time,normalize(neuronal_data_standardized(7,:)),'b','LineWidth',scale)
+plot(time, normalize(neuronalData(7,:)), 'b', 'LineWidth', scale)
+title(['AVAL',' (',num2str(bestIndividualsAll{end,3}(2)),')'], 'FontSize', 12*scale,'Interpreter','latex')
 xlim([0 226.1])
-set(gca,'xtick',[]); set(gca, 'FontSize', default_font*scale*0.75)
-%ylim([min(normalize(neuronal_data_standardized(7,:)))-1 max(normalize(neuronal_data_standardized(7,:)))+1])
 ylim([-5 5])
-title(['AVAL',' (',num2str(best_individuals_all{end,3}(2)),')'],'FontSize', 12*scale,'Interpreter','latex')
-set(gca,'xtick',[]);
+set(gca, 'xtick', [])
+set(gca, 'FontSize', defaultFont*scale*0.75)
 
 
 %%%%%%%%%%%%%%
 %%% Axis 10 %%%
 %%%%%%%%%%%%%%
 
-subplot(10,columns,10);
-plot(1:iterations,CC_AVAL,'Color',[107,142,35]/255,'LineWidth',scale);
+subplot(10, columns, 10)
+plot(1:nIterations, ccAVAL, 'Color', [107,142,35]/255, 'LineWidth', scale)
+title('AVAL correlation', 'FontSize', 12*scale, 'Interpreter', 'latex')
+if nIterations ~=1
+    xlim([1 nIterations]) 
+end
 ylim([0 1])
-set(gca,'xtick',[]); set(gca, 'FontSize', default_font*scale*0.75)
-if iterations ~=1; xlim([1 iterations]); end
-title('AVAL correlation','FontSize', 12*scale,'Interpreter','latex')
-set(gca,'xtick',[]);
+set(gca, 'xtick', []);
+set(gca, 'FontSize', defaultFont*scale*0.75)
 
 
 %%%%%%%%%%%%%%
 %%% Axis 4 %%%
 %%%%%%%%%%%%%%
 
-subplot(10,columns,11);
-plot(time,normalize(best_individuals_all{end,2}(idx_neurons(3),:)),'r','LineWidth',scale);
+subplot(10, columns, 11)
+plot(time, normalize(bestIndividualsAll{end,2}(idxPruned(3),:)), 'r', 'LineWidth', scale)
 hold on
-plot(time,normalize(neuronal_data_standardized(4,:)),'b','LineWidth',scale)
+plot(time, normalize(neuronalData(4,:)), 'b', 'LineWidth', scale)
+title(['AVBL',' (', num2str(bestIndividualsAll{end,3}(3)),')'], 'FontSize', 12*scale,'Interpreter','latex')
 xlim([0 226.1])
-set(gca,'xtick',[]); set(gca, 'FontSize', default_font*scale*0.75)
-%ylim([min(normalize(neuronal_data_standardized(4,:)))-1 max(normalize(neuronal_data_standardized(4,:)))+1])
 ylim([-5 5])
-title(['AVBL',' (',num2str(best_individuals_all{end,3}(3)),')'],'FontSize', 12*scale,'Interpreter','latex')
-set(gca,'xtick',[]);
+set(gca, 'xtick', [])
+set(gca, 'FontSize', defaultFont*scale*0.75)
+
 
 %%%%%%%%%%%%%%%
 %%% Axis 11 %%%
 %%%%%%%%%%%%%%%
 
-subplot(10,columns,12)
-plot(1:iterations,CC_AVBL,'Color',[107,142,35]/255,'LineWidth',scale);
-ylim([0 1])
-set(gca,'xtick',[]); set(gca, 'FontSize', default_font*scale*0.75)
-xlim([1 iterations]);
+subplot(10, columns, 12)
+plot(1:nIterations, ccAVBL, 'Color',[107,142,35]/255, 'LineWidth', scale)
 title('AVBL correlation','FontSize', 12*scale,'Interpreter','latex')
-set(gca,'xtick',[]);
+xlim([1 nIterations])
+ylim([0 1])
+set(gca, 'xtick', [])
+set(gca, 'FontSize', defaultFont*scale*0.75)
 
 
 %%%%%%%%%%%%%%
 %%% Axis 5 %%%
 %%%%%%%%%%%%%%
 
-
-subplot(10,columns,13)
-plot(time,normalize(best_individuals_all{end,2}(idx_neurons(4),:)),'r','LineWidth',scale);
+subplot(10, columns, 13)
+plot(time, normalize(bestIndividualsAll{end,2}(idxPruned(4),:)), 'r', 'LineWidth', scale)
 hold on
-plot(time,normalize(neuronal_data_standardized(28,:)),'b','LineWidth',scale)
+plot(time, normalize(neuronalData(28,:)), 'b', 'LineWidth', scale)
+title(['AVDL',' (',num2str(bestIndividualsAll{end,3}(4)),')'],'FontSize', 12*scale,'Interpreter','latex')
 xlim([0 226.1])
-set(gca,'xtick',[]); set(gca, 'FontSize', default_font*scale*0.75)
-%ylim([min(normalize(neuronal_data_standardized(28,:)))-1 max(normalize(neuronal_data_standardized(28,:)))+1])
 ylim([-5 5])
-title(['AVDL',' (',num2str(best_individuals_all{end,3}(4)),')'],'FontSize', 12*scale,'Interpreter','latex')
-set(gca,'xtick',[]);
+set(gca, 'xtick', [])
+set(gca, 'FontSize', defaultFont*scale*0.75)
 
 
 %%%%%%%%%%%%%%%
 %%% Axis 12 %%%
 %%%%%%%%%%%%%%%
 
-subplot(10,columns,14)
-plot(1:iterations,CC_AVDL,'Color',[107,142,35]/255,'LineWidth',scale);
+subplot(10, columns, 14)
+plot(1:nIterations, ccAVDL, 'Color', [107,142,35]/255, 'LineWidth', scale)
+title('AVDL correlation', 'FontSize', 12*scale, 'Interpreter', 'latex')
+xlim([1 nIterations])
 ylim([0 1])
-set(gca,'xtick',[]); set(gca, 'FontSize', default_font*scale*0.75)
-xlim([1 iterations]);
-title('AVDL correlation','FontSize', 12*scale,'Interpreter','latex')
-set(gca,'xtick',[]);
+set(gca, 'xtick', [])
+set(gca, 'FontSize', defaultFont*scale*0.75)
 
 
 %%%%%%%%%%%%%%
 %%% Axis 6 %%%
 %%%%%%%%%%%%%%
 
-subplot(10,columns,15)
-plot(time,normalize(best_individuals_all{end,2}(idx_neurons(5),:)),'r','LineWidth',scale);
+subplot(10, columns, 15)
+plot(time, normalize(bestIndividualsAll{end,2}(idxPruned(5),:)), 'r', 'LineWidth', scale)
 hold on
-plot(time,normalize(neuronal_data_standardized(49,:)),'b','LineWidth',scale)
+plot(time,normalize(neuronalData(49,:)), 'b', 'LineWidth', scale)
+title(['AVDR',' (',num2str(bestIndividualsAll{end,3}(5)),')'],'FontSize', 12*scale, 'Interpreter', 'latex')
 xlim([0 226.1])
-set(gca,'xtick',[]); set(gca, 'FontSize', default_font*scale*0.75)
-%ylim([min(normalize(neuronal_data_standardized(49,:)))-1 max(normalize(neuronal_data_standardized(49,:)))+1])  
 ylim([-5 5])
-title(['AVDR',' (',num2str(best_individuals_all{end,3}(5)),')'],'FontSize', 12*scale,'Interpreter','latex')
-set(gca,'xtick',[]);
+set(gca, 'xtick', [])
+set(gca, 'FontSize', defaultFont*scale*0.75)
 
 
 %%%%%%%%%%%%%%%
 %%% Axis 13 %%%
 %%%%%%%%%%%%%%%
 
-subplot(10,columns,16);
-plot(1:iterations,CC_AVDR,'Color',[107,142,35]/255,'LineWidth',scale);
-ylim([0 1])
-set(gca,'xtick',[]); set(gca, 'FontSize', default_font*scale*0.75)
-xlim([1 iterations]);
+subplot(10, columns, 16)
+plot(1:nIterations, ccAVDR, 'Color', [107,142,35]/255, 'LineWidth', scale)
 title('AVDR correlation','FontSize', 12*scale,'Interpreter','latex')
-set(gca,'xtick',[]);
+xlim([1 nIterations])
+ylim([0 1])
+set(gca, 'xtick', [])
+set(gca, 'FontSize', defaultFont*scale*0.75)
 
 
 %%%%%%%%%%%%%%
 %%% Axis 7 %%%
 %%%%%%%%%%%%%%
 
-subplot(10,columns,17)
-plot(time,normalize(best_individuals_all{end,2}(idx_neurons(6),:)),'r','LineWidth',scale);
+subplot(10, columns, 17)
+plot(time, normalize(bestIndividualsAll{end,2}(idxPruned(6),:)), 'r', 'LineWidth', scale)
 hold on
-plot(time,normalize(neuronal_data_standardized(2,:)),'b','LineWidth',scale)
+plot(time, normalize(neuronalData(2,:)), 'b', 'LineWidth', scale)
+title(['RIML',' (',num2str(bestIndividualsAll{end,3}(6)),')'],'FontSize', 12*scale, 'Interpreter', 'latex')
 xlim([0 226.1])
-set(gca,'xtick',[]); set(gca, 'FontSize', default_font*scale*0.75)
-%ylim([min(normalize(neuronal_data_standardized(2,:)))-1 max(normalize(neuronal_data_standardized(2,:)))+1])    
 ylim([-5 5])
-title(['RIML',' (',num2str(best_individuals_all{end,3}(6)),')'],'FontSize', 12*scale,'Interpreter','latex')
-set(gca,'xtick',[]); 
+set(gca, 'xtick', [])
+set(gca, 'FontSize', defaultFont*scale*0.75)
 
 
 %%%%%%%%%%%%%%%
 %%% Axis 14 %%%
 %%%%%%%%%%%%%%%
 
-subplot(10,columns,18)
-set(gca,'xtick',[]); set(gca, 'FontSize', default_font*scale*0.75)
-plot(1:iterations,CC_RIML,'Color',[107,142,35]/255,'LineWidth',scale);
-ylim([0 1])
-xlim([1 iterations]);
+subplot(10, columns, 18)
+plot(1:nIterations, ccRIML, 'Color', [107,142,35]/255, 'LineWidth', scale)
 title('RIML correlation','FontSize', 12*scale,'Interpreter','latex')
-set(gca,'xtick',[]);
+ylim([0 1])
+xlim([1 nIterations])
+set(gca, 'xtick', [])
+set(gca, 'FontSize', defaultFont*scale*0.75)
 
 
 %%%%%%%%%%%%%%
 %%% Axis 8 %%%
 %%%%%%%%%%%%%%
 
-subplot(10,columns,19);
-plot(time,normalize(best_individuals_all{end,2}(idx_neurons(7),:)),'r','LineWidth',scale);
+subplot(10, columns, 19)
+plot(time, normalize(bestIndividualsAll{end,2}(idxPruned(7),:)), 'r', 'LineWidth', scale)
 hold on
-plot(time,normalize(neuronal_data_standardized(11,:)),'b','LineWidth',scale)
+plot(time, normalize(neuronalData(11,:)), 'b', 'LineWidth', scale)
+title(['RMEL',' (',num2str(bestIndividualsAll{end,3}(7)),')'],'FontSize', 12*scale,'Interpreter','latex')
+xlabel('time [s]','FontSize',12*scale,'Interpreter','Latex')
 xlim([0 226.1])
-%ylim([min(normalize(neuronal_data_standardized(11,:)))-1 max(normalize(neuronal_data_standardized(11,:)))+1])
 ylim([-5 5])
-set(gca, 'FontSize', default_font*scale*0.75)
-title(['RMEL',' (',num2str(best_individuals_all{end,3}(7)),')'],'FontSize', 12*scale,'Interpreter','latex')
-xlabel('time [s]','FontSize',12*scale,'Interpreter','Latex');
+set(gca, 'FontSize', defaultFont*scale*0.75)
 
 
 %%%%%%%%%%%%%%%
 %%% Axis 15 %%%
 %%%%%%%%%%%%%%%
 
-subplot(10,columns,20);
-plot(1:iterations,CC_RMEL,'Color',[107,142,35]/255,'LineWidth',scale);
+subplot(10, columns, 20)
+plot(1:nIterations, ccRMEL,'Color', [107,142,35]/255, 'LineWidth', scale)
+title('RMEL correlation','FontSize', 12*scale, 'Interpreter', 'latex')
+xlabel('Iterations', 'FontSize', 12*scale, 'Interpreter', 'Latex')
+xlim([1 nIterations])
 ylim([0 1])
-xlim([1 iterations]);
-set(gca, 'FontSize', default_font*scale*0.75)
-title('RMEL correlation','FontSize', 12*scale,'Interpreter','latex');
-xlabel('Iterations','FontSize',12*scale,'Interpreter','Latex');
-
+set(gca, 'FontSize', defaultFont*scale*0.75)
 
 
 end
