@@ -1,7 +1,21 @@
 function [meanFitness, fitnessPopulation] = calculateFitness(individualStates, neuronalData)
-% Calculates the fitness of the different individuals in the population.
-% The recorded time series are needed to compute the fitness, since it is
-% defined as the mean correlation of the different 7 neurons.
+% 
+% Function: 
+% – calculateFitness: Calculates the fitness of the different individuals 
+%   in the population. The recorded time series are needed to compute the 
+%   fitness, since it is defined as the mean correlation of the different 
+%   7 neurons.
+%
+% Inputs:
+% - individualStates: Simulated neural activity for each neuron.
+% - neuronalData: Neuronal time series.
+% 
+% Returns:
+% - meanFitness: Mean fitness of the population.
+% - fitnessPopulation: Individual fitness for each individual.
+%
+% https://github.com/sgalella-macasal-repo/SoftWired-Celegans
+%
 
 % Index neurons in 'neuronalDataStandardized'
 idxData = [6 7 4 28 49 2 11];

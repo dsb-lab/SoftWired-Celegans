@@ -1,6 +1,19 @@
 function plotData(nIterations, bestIndividualIteration, bestIndividualsAll, bestIndividualRatio, neuronalData, time)
-% Plots the genetic algorithm throughout iterations, including the inhibition, 
-% the best signals and the correlation evolution.
+% 
+% Function: 
+% – plotData: Plots different graphs: Ratio and fitness, comparison of time
+%   series, and correlation over generations.
+%
+% Inputs:
+% - nIterations: Number of simulated generations.
+% - bestIndividualIteration: Best individual of the historic generations.
+% – bestIndividualsAll: Best individuals along generations.
+% – bestIndividualRatio: Ratio of the best individual.
+% – neuronalData: Neuronal time series.
+% – time: Duration of neuronal data.
+%
+% https://github.com/sgalella-macasal-repo/SoftWired-Celegans
+%
 
 originalSize = [1 1 1280 800];
 actualSize = get(0,'ScreenSize');

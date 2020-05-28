@@ -1,4 +1,17 @@
 function exciInhiRatio = calculateExciInhiRatio(connectivityMatrix)
+% 
+% Function: 
+% – calculateExciInhiRatio: Computes the proportion of inhibition-excitation
+%   in a given adjacency matrix.
+%
+% Inputs:
+% - connectivityMatrix: Adjacency matrix of the C.elegans connectome.
+% 
+% Returns:
+% - exciInhiRatio: Percentage of inhibition.
+%
+% https://github.com/sgalella-macasal-repo/SoftWired-Celegans
+%
 
 if ~iscell(connectivityMatrix)
     excitatory_connections = sum(sum(connectivityMatrix,2)>0);

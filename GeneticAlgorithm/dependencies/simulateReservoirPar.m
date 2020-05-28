@@ -1,5 +1,19 @@
 function states = simulateReservoirPar(population, inputs)
-% Simulates reservoir activity using a discrete map. Parallel computing used.
+% 
+% Function: 
+% – simulateReservoirPar :Simulates reservoir activity using a discrete map. 
+%   Parallel computing used.
+%
+% Inputs:
+% - population: Current generation individuals (adjacency matrices with 
+%   different inhi-exhi ratio).
+% – inputs: Time series of AFDL and AFDR.
+% 
+% Returns:
+% - states: Simulated neural activity.
+%
+% https://github.com/sgalella-macasal-repo/SoftWired-Celegans
+%
 
 % Initialization of states
 states = cell(length(population),1);
