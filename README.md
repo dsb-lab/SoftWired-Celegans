@@ -1,6 +1,5 @@
 # SoftWired-Celegans
-Code for the paper *Soft-wired long-term memory in a natural recurrent neuronal network* ([arXiv:2004.00498
-](https://arxiv.org/abs/2004.00498), [bioRxiv 2020.04.01.020180](https://www.biorxiv.org/content/10.1101/2020.04.01.020180v1.abstract)).
+Code for the paper *Soft-wired long-term memory in a natural recurrent neuronal network* ([doi:10.1063/5.0009709](https://doi.org/10.1063/5.0009709)).
 
 <p align="center">
     <img width="750" height="320"src="Others/graph.png">
